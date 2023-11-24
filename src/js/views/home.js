@@ -10,7 +10,7 @@ export const Home = () => {
 				</Link>
 				<div className="ml-auto">
 					<Link to="/demo">
-						<button style={{ marginRight: "10px" }} className="btn btn-success ">Add new contact</button>
+						<button style={{ marginRight: "15px" }} className="btn btn-success ">Add new contact</button>
 					</Link>
 				</div>
 			</nav>
