@@ -14,13 +14,17 @@ export const Home = () => {
 					</Link>
 				</div>
 			</nav>
-			<div className="d-flex">
-				<img src="https://placehold.co/600x400" />
+			<div className="contact-profile d-flex">
+				<img className="contact-picture" src="https://placehold.co/500x500" />
 				<div className="contact-info">
-					<p className="contact-name">Mike Anamendolla</p>
-					<p className="street-adress">5842 Hillcrest Red</p>
-					<p className="contact-number">(870) 288-4149</p>
-					<p className="email-direction">mike.ana@example.com</p>
+					<p className="contact-name">Mike Anamendolla
+						<span className="update-delete">
+							<i className="fa-solid fa-pencil"></i><i className="fa-solid fa-trash"></i>
+						</span>
+					</p>
+					<p className="street-adress text-muted"><i className="fa-solid fa-location-dot"></i>&nbsp;5842 Hillcrest Red</p>
+					<p className="contact-number text-muted"><i className="fa-solid fa-phone"></i>&nbsp;(870) 288-4149</p>
+					<p className="email-direction text-muted"><i className="fa-solid fa-envelope"></i>&nbsp;mike.ana@example.com</p>
 				</div>
 			</div>
 		</div>
