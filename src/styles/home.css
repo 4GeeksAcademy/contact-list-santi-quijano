@@ -29,9 +29,6 @@
    position: relative;
 }
 
-.fa-solid {
-    margin: 1px;
-}
 
 .street-adress, .contact-number, .email-direction {
     font-size: 14px;
@@ -39,9 +36,7 @@
 
 .update-delete {
     position: absolute;
-    left: 950px;
+    left: 900px;
 }
 
-.fa-pencil {
-    margin-bottom: 85px;
-}
+

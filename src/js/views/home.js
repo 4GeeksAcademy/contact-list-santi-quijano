@@ -18,8 +18,8 @@ export const Home = () => {
 				<img className="contact-picture" src="https://placehold.co/500x500" />
 				<div className="contact-info">
 					<p className="contact-name">Mike Anamendolla
-						<span className="update-delete">
-							<i className="fa-solid fa-pencil"></i><i className="fa-solid fa-trash"></i>
+						<span className="update-delete d-flex gap-3">
+							<button><i className="fa-solid fa-pencil"></i></button><button><i className="fa-solid fa-trash"></i></button>
 						</span>
 					</p>
 					<p className="street-adress text-muted"><i className="fa-solid fa-location-dot"></i>&nbsp;5842 Hillcrest Red</p>
