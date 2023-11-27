@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-
 import { Context } from "../store/appContext";
 
 import "../../styles/demo.css";
@@ -28,10 +27,14 @@ export const Demo = () => {
 					<label for="inputAdress" className="form-label" placeholder="Full Name">Adress</label>
 					<input type="text" className="form-control" id="inputAdress" placeholder="Enter adress" />
 				</div>
-				<button type="submit" className="btn btn-primary w-100">save</button>
+
+				<Link to="/">
+					<button type="submit" className="btn btn-primary w-100">Save</button>
+				</Link>
+
 			</form>
 			<br />
-			<Link to="/">or get back to contacts</Link>
+			<Link to="/"><button type="submit" className="btn btn-primary w-100">Or get back to contacts</button></Link>
 		</div>
 	);
 };

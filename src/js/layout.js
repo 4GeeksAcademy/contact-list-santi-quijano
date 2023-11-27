@@ -7,6 +7,7 @@ import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 import { Footer } from "./component/footer";
+import { Contact } from "./views/home";
 
 //create your first component
 const Layout = () => {
