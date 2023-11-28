@@ -40,7 +40,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ demo: demo });
 			},
 			getAllContacts: async () => {
-				fetch("https://playground.4geeks.com/apis/fake/contact/agenda/").then(response => response.json()).then(data => {
+				fetch("https://playground.4geeks.com/apis/fake/contact/agenda/santiago_agenda").then(response => response.json()).then(data => {
 					setStore({ agenda: data })
 				}).catch(err => console.log(err))
 			}
