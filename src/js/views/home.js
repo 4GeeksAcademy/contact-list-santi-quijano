@@ -1,21 +1,23 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ContactCard } from "../component/ContactCard";
 import { Context } from "../store/appContext";
+import "../../styles/home.css"
 
-
-export const Home = () => {
+const home = () => {
 	const { store, actions } = useContext(Context);
 	return (
-		<>
+		<div className
+		
+	)
+};
+
+
+
+<>
 			{
 				store.agenda.map((value, index) => {
 					return <ContactCard contact={value} key={value.id} />
 				})
 			}
 		</>
-	)
-};
-
-
-

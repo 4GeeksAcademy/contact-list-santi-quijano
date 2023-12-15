@@ -41,7 +41,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			getAllContacts: async () => {
 				fetch("https://playground.4geeks.com/apis/fake/contact/agenda/santiago_agenda").then(response => response.json()).then(data => {
-					setStore({ agenda: data })
+					setStore({ agenda: data });
 				}).catch(err => console.log(err))
 			}
 		}
