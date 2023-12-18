@@ -11,6 +11,7 @@ const EditContact = () => {
 	const [Id, setId] = useState(store.contact.id || "");
 
 	const handleSave = () => {
+
 		actions.putContact(fullName, email, phone, address, Id)
 	}
 
@@ -20,23 +21,23 @@ const EditContact = () => {
 			<form>
 				<div className="mb-2">
 					<label>Full Name</label>
-					<input type="text" className="form-control" placeholder="Full Name" onChange={(e) => setFullName(e.target.value)} required />
+					<input type="text" className="form-control" value={fullName} placeholder="Edit name" onChange={(e) => setFullName(e.target.value)} />
 				</div>
 				<div className="mb-2">
 					<label>Email</label>
-					<input type="email" className="form-control" id="inputEmail" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)} required />
+					<input type="email" className="form-control" value={email} placeholder="Edit email" onChange={(e) => setEmail(e.target.value)} />
 				</div>
 				<div className="mb-2">
 					<label>Phone</label>
-					<input type="tel" className="form-control" id="inputPhone" placeholder="Enter phone" onChange={(e) => setPhone(e.target.value)} required />
+					<input type="tel" className="form-control" value={phone} placeholder="Edit phone" onChange={(e) => setPhone(e.target.value)} />
 				</div>
 				<div className="mb-2">
 					<label>address</label>
-					<input type="text" className="form-control" id="inputaddress" placeholder="Enter address" onChange={(e) => setaddress(e.target.value)} required />
+					<input type="text" className="form-control" value={address} placeholder="Edit address" onChange={(e) => setAddress(e.target.value)} />
 				</div>
 
 				<Link to="/">
-					<button type="submit" className="btn btn-primary w-100" onClick={handleSave}>Save</button>
+					<button className="btn btn-primary w-100" onClick={handleSave}>Save</button>
 				</Link>
 
 			</form>

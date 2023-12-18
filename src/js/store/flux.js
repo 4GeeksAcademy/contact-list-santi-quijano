@@ -14,7 +14,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			],
 			agenda: [],
-			contact: [],
+			contact: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -66,6 +66,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 					if (response.ok) {
 						console.log("Contact successfully created!");
+						actions.getAgenda();
 					} else {
 						console.error("There was an error while creating your contact, try again:", response.status);
 					}
@@ -89,18 +90,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 					if (response.ok) {
 						console.log("Contact successfully updated!");
+						actions.getAgenda();
 					} else {
 						console.error("There was an error while updating your contact, try again:", response.status);
 					}
 				} catch (error) {
 					console.error("There was an error in your request:", error);
 				}
-				actions.getAgenda()
 			},
 			getContact: (id) => {
 				const contactUrl = `https://playground.4geeks.com/apis/fake/contact/${id}`
 				fetch(contactUrl).then(response => response.json()).then(data => {
 					setStore({ contact: data });
+					setId(data.id)
 					console.log(data)
 				})
 					.catch(error => {
