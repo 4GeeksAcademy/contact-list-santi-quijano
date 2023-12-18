@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Context } from '../store/appContext';
 
 
-const ContactCard = (props) => {
+export const ContactCard = (props) => {
     const { store, actions } = useContext(Context);
 
     return (
