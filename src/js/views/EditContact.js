@@ -1,18 +1,17 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-const AddContact = () => {
+const EditContact = () => {
 	const { store, actions } = useContext(Context);
-	const [contact, setContact] = useState();
-	const [fullName, setFullName] = useState("");
-	const [email, setEmail] = useState("");
-	const [phone, setPhone] = useState("");
-	const [adress, setAdress] = useState("");
-	const [Id, setId] = useState();
+	const [fullName, setFullName] = useState(store.contact.fullName || "");
+	const [email, setEmail] = useState(store.contact.email || "");
+	const [phone, setPhone] = useState(store.contact.phone || "");
+	const [address, setaddress] = useState(store.contact.address || "");
+	const [Id, setId] = useState(store.contact.id || "");
 
 	const handleSave = () => {
-		actions.updateContact(fullName, email, phone, adress, Id)
+		actions.putContact(fullName, email, phone, address, Id)
 	}
 
 	return (
@@ -32,8 +31,8 @@ const AddContact = () => {
 					<input type="tel" className="form-control" id="inputPhone" placeholder="Enter phone" onChange={(e) => setPhone(e.target.value)} required />
 				</div>
 				<div className="mb-2">
-					<label>Adress</label>
-					<input type="text" className="form-control" id="inputAdress" placeholder="Enter adress" onChange={(e) => setAdress(e.target.value)} required />
+					<label>address</label>
+					<input type="text" className="form-control" id="inputaddress" placeholder="Enter address" onChange={(e) => setaddress(e.target.value)} required />
 				</div>
 
 				<Link to="/">
@@ -47,4 +46,4 @@ const AddContact = () => {
 	);
 };
 
-export default EditContact
+export default EditContact;

@@ -5,11 +5,11 @@ import "../../styles/demo.css";
 
 const AddContact = () => {
 	const { store, actions } = useContext(Context);
-	const [contact, setContact] = useState();
+	const [contact, setContact] = useState({});
 	const [fullName, setFullName] = useState("");
 	const [email, setEmail] = useState("");
 	const [phone, setPhone] = useState("");
-	const [adress, setAdress] = useState("");
+	const [address, setAddress] = useState("");
 
 	return (
 		<div className="container mt-10">
@@ -28,12 +28,12 @@ const AddContact = () => {
 					<input type="tel" className="form-control" id="inputPhone" placeholder="Enter phone" onChange={(e) => setPhone(e.target.value)} required />
 				</div>
 				<div className="mb-2">
-					<label>Adress</label>
-					<input type="text" className="form-control" id="inputAdress" placeholder="Enter adress" onChange={(e) => setAdress(e.target.value)} required />
+					<label>Address</label>
+					<input type="text" className="form-control" id="inputAddress" placeholder="Enter address" onChange={(e) => setAddress(e.target.value)} required />
 				</div>
 
 				<Link to="/">
-					<button type="submit" className="btn btn-primary w-100" onClick={() => actions.createContact(fullName, email, phone, adress)}>Save</button>
+					<button type="submit" className="btn btn-primary w-100" onClick={() => actions.postContact(fullName, email, phone, address)}>Save</button>
 				</Link>
 
 			</form>

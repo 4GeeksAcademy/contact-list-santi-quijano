@@ -58,7 +58,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					email: email,
 					agenda_slug: 'Mermate',
 					phone: phone,
-					adress: address
+					address: address
 				};
 				const response = await fetch('https://playground.4geeks.com/apis/fake/contact/', {
 					method: "POST",
@@ -71,7 +71,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.error("There was an error while creating your contact, try again:", response.status);
 				}
 			} catch (error) {
-				console.error("There was an error in your solicitude, try again:", error)
+				console.error("There was an error in your request, try again:", error)
 			}
 		},
 		putContact: (fullName, email, phone, address, id) => {
@@ -89,12 +89,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 					body: JSON.stringify(updateContact)
 				});
 				if(response.ok) {
-					console.error("Contact successfully updated!");
+					console.log("Contact successfully updated!");
 				} else {
 					console.error("There was an error while updating your contact, try again:", response.status);
 				}
 			} catch (error) {
-			console.error("There was an error in your solicitude:", error);
+			console.error("There was an error in your request:", error);
 		}
 		actions.getMyAgenda() 
 	 	},
@@ -113,7 +113,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 				console.log(store.contact)
 			}
 		},
-			
+		deleteContact: async(id) => {
+			try {
+				const response = await fetch(`https://playground.4geeks.com/apis/fake/contact/${id}`, {
+					method: "DELETE",
+					headers: {"Content-Type": "application/json"}
+				});
+				if(response.ok) {
+					console.log("Contact successfully deleted!");
+				} else {
+					console.error("There was an error while deleting a contact, try again:", response.status);
+				}
+			} catch (error) {
+				console.error("There was a error in the request, try again:", error)
+			}
+			actions.getMyAgenda()
+		}
 	};
 };
 
