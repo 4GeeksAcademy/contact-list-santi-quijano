@@ -10,9 +10,6 @@ export const ContactCard = (props) => {
         <div>
             <nav className="navbar navbar-light mb-3">
                 <div className="ml-auto">
-                    <Link to="/add-contact">
-                        <button type="button" className="btn btn-info" style={{ float: "right", marginRight: "50px" }}>Add new contact</button>
-                    </Link>
                 </div>
             </nav>
             <div className="contact-profile d-flex">
