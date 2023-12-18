@@ -1,36 +1,34 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
 import { Context } from '../store/appContext';
-
+import "../../styles/index.css"
 
 export const ContactCard = (props) => {
     const { store, actions } = useContext(Context);
 
     return (
         <div>
-            <nav classNameName="navbar navbar-light mb-3">
-                <Link to="/">
-                </Link>
-                <div classNameName="ml-auto">
-                    <Link to="/addContact">
-                        <button type="button" classNameName="btn btn-info" style={{ float: "right", marginRight: "50px" }}>Add new contact</button>
+            <nav className="navbar navbar-light mb-3">
+                <div className="ml-auto">
+                    <Link to="/add-contact">
+                        <button type="button" className="btn btn-info" style={{ float: "right", marginRight: "50px" }}>Add new contact</button>
                     </Link>
                 </div>
             </nav>
-            <div classNameName="contact-profile d-flex">
-                <img classNameName="contact-picture" src="https://placehold.co/500x500" />
-                <div classNameName="contact-info">
-                    <p classNameName="contact-name">{props.full_name}
-                        <span classNameName="update-delete d-flex gap-3">
-                            <button><i classNameName="fa-solid fa-pencil"></i></button><button><i classNameName="fa-solid fa-trash"></i></button>
+            <div className="contact-profile d-flex">
+                <img className="contact-picture" src="https://placehold.co/500x500" />
+                <div className="contact-info">
+                    <p className="contact-name">{props.full_name}
+                        <span className="d-flex gap-3">
+                            <button><i className="fa-solid fa-pencil"></i></button><button><i className="fa-solid fa-trash"></i></button>
                         </span>
                     </p>
-                    <p classNameName="street-adress text-muted"><i classNameName="fa-solid fa-location-dot"></i>&nbsp;{props.address}</p>
-                    <p classNameName="contact-number text-muted"><i classNameName="fa-solid fa-phone"></i>&nbsp;{props.phone}</p>
-                    <p classNameName="email-direction text-muted"><i classNameName="fa-solid fa-envelope"></i>&nbsp;{props.email}</p>
+                    <p className="street-adress text-muted"><i className="fa-solid fa-location-dot"></i>&nbsp;{props.address}</p>
+                    <p className="contact-number text-muted"><i className="fa-solid fa-phone"></i>&nbsp;{props.phone}</p>
+                    <p className="email-direction text-muted"><i className="fa-solid fa-envelope"></i>&nbsp;{props.email}</p>
                 </div>
             </div>
         </div>
     )
 };
-export default ContactCard 
+export default ContactCard;

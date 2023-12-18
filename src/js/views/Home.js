@@ -1,12 +1,11 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ContactCard } from "../component/ContactCard";
 import { Context } from "../store/appContext";
 import "../../styles/home.css"
 
-
 const Home = () => {
-	const { store, actions } = useContext(Context);
+	const { store } = useContext(Context);
 
 	return (
 		<div className="container mt-5">
@@ -15,17 +14,22 @@ const Home = () => {
 
 				</div>
 				<div className="col">
-					<Link to="/add-contact">
-					<button className='btn btn-success '> Add New Contact </button>
-                  </Link>
-                </div>
-            </div>
-            {store.agenda && store.agenda.map((contact,index)=>(
-            <ContactCard key={index} name={contact.fullName} phone={contact.phone} img={contact.address}  email={contact.email} address={contact.address} index={index} id={contact.id} />))
+					<Link to="/add-contact"><button className="btn btn-success">Add New Contact</button></Link>
+				</div>
+			</div>
+			{store.agenda ? (
+				<div className="row mt-3">
+					{store.agenda.map((contact, index) => (
+						<ContactCard key={index} {...contact} />
+					))}
+				</div>
+			) : (
+				<p>No contacts avaiable</p>
+			)}
+		</div>
+	)
 }
-	</div>
-  )
-}
-
 
 export default Home
+
+

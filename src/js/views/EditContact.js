@@ -7,7 +7,7 @@ const EditContact = () => {
 	const [fullName, setFullName] = useState(store.contact.fullName || "");
 	const [email, setEmail] = useState(store.contact.email || "");
 	const [phone, setPhone] = useState(store.contact.phone || "");
-	const [address, setaddress] = useState(store.contact.address || "");
+	const [address, setAddress] = useState(store.contact.address || "");
 	const [Id, setId] = useState(store.contact.id || "");
 
 	const handleSave = () => {
