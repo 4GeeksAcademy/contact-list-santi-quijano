@@ -4,20 +4,13 @@ import { ContactCard } from "../component/ContactCard";
 import { Context } from "../store/appContext";
 import "../../styles/home.css"
 
+
 const home = () => {
 	const { store, actions } = useContext(Context);
+
 	return (
-		<div className
-		
+		<div>home</div>
 	)
-};
+}
 
-
-
-<>
-			{
-				store.agenda.map((value, index) => {
-					return <ContactCard contact={value} key={value.id} />
-				})
-			}
-		</>
+export default home
