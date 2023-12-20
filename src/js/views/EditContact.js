@@ -10,8 +10,14 @@ const EditContact = () => {
 	const [address, setAddress] = useState(store.contact.address || "");
 	const [Id, setId] = useState(store.contact.id || "");
 
-	const handleSave = () => {
 
+	useEffect(() => {
+		console.log(store.contact);
+		setId(store.contact.id);
+	}, [store.contact.id])
+
+	const handleSave = () => {
+		console.log(Id)
 		actions.putContact(fullName, email, phone, address, Id)
 	}
 

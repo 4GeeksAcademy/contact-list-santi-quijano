@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
 import { Context } from '../store/appContext';
-import "../../styles/index.css"
 
 export const ContactCard = (props) => {
     const { store, actions } = useContext(Context);

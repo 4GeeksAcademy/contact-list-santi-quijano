@@ -14,7 +14,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			],
 			agenda: [],
-			contact: []
+			contact: [],
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -49,15 +49,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.error("There was an error while fetching the agenda, try again:", error);
 					});
 			},
-			postContact: async (fullName, email, phone, address) => {
+			postContact: async (fullName, email, address, phone) => {
 				try {
 					const store = getStore();
 					const addContact = {
 						fullName: fullName,
 						email: email,
 						agenda_slug: 'Mermate',
-						phone: phone,
-						address: address
+						address: address,
+						phone: phone
 					};
 					const response = await fetch('https://playground.4geeks.com/apis/fake/contact/', {
 						method: "POST",
@@ -74,16 +74,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.error("There was an error in your request, try again:", error)
 				}
 			},
-			putContact: (fullName, email, phone, address, id) => {
+			putContact: async (fullName, email, address, phone, id) => {
 				const updateContact = {
 					fullName: fullName,
 					email: email,
 					agenda_slug: 'Mermate',
-					phone: phone,
-					address: address
+					address: address,
+					phone: phone
 				}
 				try {
-					const response = fetch(`https://playground.4geeks.com/apis/fake/contact/${id}`, {
+					const response = await fetch(`https://playground.4geeks.com/apis/fake/contact/${id}`, {
 						method: "PUT",
 						headers: { "Content-Type": "application/json" },
 						body: JSON.stringify(updateContact)
@@ -96,13 +96,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 				} catch (error) {
 					console.error("There was an error in your request:", error);
+					actions.getAgenda()
 				}
 			},
 			getContact: (id) => {
 				const contactUrl = `https://playground.4geeks.com/apis/fake/contact/${id}`
 				fetch(contactUrl).then(response => response.json()).then(data => {
-					setStore({ contact: data });
-					setId(data.id)
+					setStore({ contact: data, id: data.id });
 					console.log(data)
 				})
 					.catch(error => {

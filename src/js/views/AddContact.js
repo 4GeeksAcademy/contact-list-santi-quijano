@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/demo.css";
@@ -16,20 +16,20 @@ const AddContact = () => {
 			<h1 className="text-center">Add contact</h1>
 			<form>
 				<div className="mb-2">
-					<label>Full Name</label>
-					<input type="text" className="form-control" placeholder="Full Name" onChange={(e) => setFullName(e.target.value)} required />
+					<p>Full Name</p>
+					<input type="text" className="form-control" placeholder="Full Name" onChange={(e) => setFullName(e.target.value)} />
 				</div>
 				<div className="mb-2">
-					<label>Email</label>
-					<input type="email" className="form-control" id="inputEmail" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)} required />
+					<p>Email</p>
+					<input type="email" className="form-control" id="inputEmail" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)} />
 				</div>
 				<div className="mb-2">
-					<label>Phone</label>
-					<input type="tel" className="form-control" id="inputPhone" placeholder="Enter phone" onChange={(e) => setPhone(e.target.value)} required />
+					<p>Phone</p>
+					<input type="tel" className="form-control" id="inputPhone" placeholder="Enter phone" onChange={(e) => setPhone(e.target.value)} />
 				</div>
 				<div className="mb-2">
-					<label>Address</label>
-					<input type="text" className="form-control" id="inputAddress" placeholder="Enter address" onChange={(e) => setAddress(e.target.value)} required />
+					<p>Address</p>
+					<input type="text" className="form-control" id="inputAddress" placeholder="Enter address" onChange={(e) => setAddress(e.target.value)} />
 				</div>
 
 				<Link to="/">
