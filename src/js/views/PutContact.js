@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-const EditContact = () => {
+const PutContact = () => {
 	const { store, actions } = useContext(Context);
 	const [fullName, setFullName] = useState(store.contact.fullName || "");
 	const [email, setEmail] = useState(store.contact.email || "");
@@ -10,11 +10,6 @@ const EditContact = () => {
 	const [address, setAddress] = useState(store.contact.address || "");
 	const [Id, setId] = useState(store.contact.id || "");
 
-
-	useEffect(() => {
-		console.log(store.contact);
-		setId(store.contact.id);
-	}, [store.contact.id])
 
 	const handleSave = () => {
 		console.log(Id)
@@ -53,4 +48,4 @@ const EditContact = () => {
 	);
 };
 
-export default EditContact;
+export default PutContact;

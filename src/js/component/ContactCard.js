@@ -15,7 +15,7 @@ export const ContactCard = (props) => {
                     <p className="contact-number contact-detail text-muted"><i className="fa-solid fa-phone"></i>&nbsp;{props.phone}</p>
                     <p className="email-direction contact-detail text-muted"><i className="fa-solid fa-envelope"></i>&nbsp;{props.email}</p>
                     <div className='d-flex justify-content'>
-                        <Link to="/edit-contact" onClick={() => {
+                        <Link to="/put-contact" onClick={() => {
                             actions.getContact(props.id)
                         }}><i className="btn btn-sm btn-outline-secondary fa-solid fa-pencil fa-fw"></i></Link>
                     </div>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/demo.css";
 
-const AddContact = () => {
+const PostContact = () => {
 	const { store, actions } = useContext(Context);
 	const [contact, setContact] = useState({});
 	const [fullName, setFullName] = useState("");
@@ -43,4 +43,4 @@ const AddContact = () => {
 	);
 };
 
-export default AddContact
+export default PostContact

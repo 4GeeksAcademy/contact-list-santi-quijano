@@ -14,7 +14,7 @@ const Home = () => {
 
 				</div>
 				<div className="col-md-3">
-					<Link to="/add-contact"><button className="btn btn-success btn-block">Add New Contact</button></Link>
+					<Link to="/post-contact"><button className="btn btn-success btn-block">Add New Contact</button></Link>
 				</div>
 			</div>
 			{store.agenda ? (
