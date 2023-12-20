@@ -2,6 +2,15 @@
     outline: 1px solid red;
 } */
 
+.contact-card-container{
+    transition: transform 0.3s;
+}
+
+.contact-card-container:hover{
+    transform: scale(1.03);
+    
+}
+
 .contact-profile {
     margin-left: 50px;
     border: 1px solid lightgray;
@@ -26,13 +35,22 @@
 
 .contact-name {
     font-size: 20px;
-  
+    margin-bottom: 0.25rem;
+    color: #555;
 }
 
 
-.street-adress, .contact-number, .email-direction {
+.contact-detail {
     font-size: 14px;
+    margin-bottom: 0.25rem;
 }
 
 
+.fa-trash {
+    cursor: pointer;
+}
+
+.fa-trash, .fa-pencil {
+    width: 35px;
+}
 

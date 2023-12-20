@@ -102,7 +102,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getContact: (id) => {
 				const contactUrl = `https://playground.4geeks.com/apis/fake/contact/${id}`
 				fetch(contactUrl).then(response => response.json()).then(data => {
-					setStore({ contact: data, id: data.id });
+					setStore({ contact: data });
 					console.log(data)
 				})
 					.catch(error => {
